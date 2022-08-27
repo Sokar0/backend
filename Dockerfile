@@ -23,7 +23,7 @@ ENV NPM_CONFIG_LOGLEVEL=warn
 ARG USER_ID=1000
 ARG GROUP_ID=1000
 
-RUN addgroup -g ${GROUP_ID} nodejs && adduser -D nodejs -u ${USER_ID} -g myuser -G mygroup -s /bin/sh -h /
+RUN addgroup -g ${GROUP_ID} nodejs && adduser -D nodejs -u ${USER_ID} -g nodejs -G nodejs -s /bin/sh -h /
 
 COPY --chown=nodejs:nodejs package*.json ./
 
