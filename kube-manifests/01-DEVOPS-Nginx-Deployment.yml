@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks-backend-deployment
+  labels:
+    app: eks-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: eks-backend
+  template:
+    metadata:
+      labels:
+        app: eks-backend
+    spec:
+      containers:
+        - name: eks-backend
+          image: CONTAINER_IMAGE
+          ports:
+            - containerPort: 3123
